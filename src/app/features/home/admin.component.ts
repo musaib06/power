@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin',
@@ -15,12 +16,13 @@ export class AdminComponent implements OnInit {
       shareReplay()
     );
 
-  constructor(private breakpointObserver: BreakpointObserver) { }
-  doAlert(){
-    alert("Are You Sure")
-  }
+  constructor(private breakpointObserver: BreakpointObserver,private router:Router) { }
+  
 
   ngOnInit(): void {
   }
-
+    //test(){
+  //this.router.navigateByUrl('/admin/users');
+  //console.log('working');
+  
 }

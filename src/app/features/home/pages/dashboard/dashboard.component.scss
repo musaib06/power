@@ -1,15 +1,53 @@
-.example-card {
-    align-items: center;
-    max-width: 1600px;
-    height: 200px!important;
-    margin-bottom: 16px;
-    width: 400px;
-  }
-  .row{
-      padding: 20px;
-      
-  }
-  .center{
-      text-align: center!important;
-  }
+
+// * {
+//     box-sizing: border-box;
+//   }
   
+//   body {
+//     font-family: Arial, Helvetica, sans-serif;
+//   }
+  
+//   /* Float four columns side by side */
+//   .column {
+//     float: left;
+//     width: 25%;
+//     padding: 0 10px;
+//   }
+  
+//   /* Remove extra left and right margins, due to padding in columns */
+//   .row {margin: 16px;
+//     margin-left: 80px;
+//     margin-right: 40px;
+//         //padding: px;
+//         height: 195px;
+// }
+  
+//   /* Clear floats after the columns */
+//   .row:after {
+//     content: "";
+//     display: table;
+//     clear: both;
+//   }
+  
+//   /* Style the counter cards */
+//   .card {
+//     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+//     padding: 30px;
+//     text-align: center;
+//     background-color: #f1f1f1;
+//     //width:200px;
+//     //height: 150px;
+//     padding-right: 30px;
+//     height: 195px;
+//     width: 250px;
+//   }
+  
+  /* Responsive columns - one column layout (vertical) on small screens */
+//   @media screen and (max-width: 600px) {
+//     .column {
+//         width: 33%;
+//       display: block;
+//       margin-bottom: 20px;
+//       padding: 0 20 30px;
+//     }
+//   }
