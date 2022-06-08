@@ -10,7 +10,8 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatButtonModule} from '@angular/material/button';
 import {MatChipsModule} from '@angular/material/chips';
-
+import { HttpClientModule,HTTP_INTERCEPTORS } from '@angular/common/http';
+import { TokenInterceptorService } from 'src/app/core/interceptor/token-interceptor.service';
 
 @NgModule({
   declarations: [],
@@ -26,7 +27,7 @@ import {MatChipsModule} from '@angular/material/chips';
     MatSelectModule,
     MatMenuModule,
     MatButtonModule,
-    MatChipsModule
+    MatChipsModule,
   ],
   exports:[
     RouterModule,
@@ -40,7 +41,7 @@ import {MatChipsModule} from '@angular/material/chips';
     MatSelectModule,
     MatMenuModule,
     MatButtonModule,
-    MatChipsModule
+    MatChipsModule,
 
   ]
 })

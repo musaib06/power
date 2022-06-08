@@ -3,20 +3,17 @@ import {SelectionModel} from '@angular/cdk/collections';
 import {MatTableDataSource} from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatButton } from '@angular/material/button';
+import { UserService } from 'src/app/core/services/user-Services/user.service';
 export interface tableStatusElement {
   emailAddress: string;
   googleAccounts: number;
   contacts: number;
   campaigns: number;
   messages:number;
+  userStatsData:any;
 }
 
-const TABLE_DATA: tableStatusElement[] = [
-  {emailAddress: 'Musaib@gmail.com', googleAccounts: 10, contacts: 14, campaigns: 11,messages:121}
- 
-  
-  
-];
+
 
 @Component({
   selector: 'app-users-stats',
@@ -25,14 +22,19 @@ const TABLE_DATA: tableStatusElement[] = [
 })
 export class UsersStatsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private api:UserService) {
+    this.api.getUserStats().subscribe(res => {
+      console.log(res)
+      this.dataSource.data = res;
+    })
+   }
 
   ngOnInit(): void {
     this.dataSource.paginator = this.paginator;
   }
 
   displayedColumns: string[] = ['emailAddress', 'googleAccounts', 'contacts', 'campaigns', 'messages','creationTag'];
-  dataSource = new MatTableDataSource<tableStatusElement>(TABLE_DATA);
+  dataSource = new MatTableDataSource<tableStatusElement>();
   selection = new SelectionModel<tableStatusElement>(true, []);
 
   @ViewChild(MatPaginator) paginator: MatPaginator;

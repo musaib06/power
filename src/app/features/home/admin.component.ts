@@ -20,6 +20,13 @@ export class AdminComponent implements OnInit {
   
 
   ngOnInit(): void {
+
+    
+  }
+  logOut()
+  {
+    localStorage.clear();
+    this.router.navigateByUrl('/auth')
   }
     //test(){
   //this.router.navigateByUrl('/admin/users');

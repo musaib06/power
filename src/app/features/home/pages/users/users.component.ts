@@ -3,41 +3,25 @@ import {SelectionModel} from '@angular/cdk/collections';
 import {MatTableDataSource} from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatButton } from '@angular/material/button';
+import { HttpClient } from '@angular/common/http';
+import { UserService } from 'src/app/core/services/user-Services/user.service';
+import { userData } from './user.model';
+import { NgbPaginationNumber } from '@ng-bootstrap/ng-bootstrap';
+
+
+
+
 export interface tableElement {
   name: string;
-  RegistrationEmail: string;
+  registrationEmail: string;
   status: string;
   lastlogin: string;
-  Datejoined:string;
-}
+  datejoined:string;
+  
+ }
+ 
 
-const TABLE_DATA: tableElement[] = [
-  {name: 'Musaib', RegistrationEmail: 'musaib@gmail.com', status: 'DISABLE', lastlogin: '10/05/2022',Datejoined:'10/05/2022'},
-  {name: 'bari', RegistrationEmail: 'musaib@gmail.com', status: 'DISABLE', lastlogin: '10/05/2022',Datejoined:'10/05/2022'},
-  {name: 'naveed', RegistrationEmail: 'musaib@gmail.com', status: 'DISABLE', lastlogin: '10/05/2022',Datejoined:'10/05/2022'},
-  {name: 'arif', RegistrationEmail: 'musaib@gmail.com', status: 'DISABLE', lastlogin: '10/05/2022',Datejoined:'10/05/2022'},
-  {name: 'basit', RegistrationEmail: 'musaib@gmail.com', status: 'DISABLE', lastlogin: '10/05/2022',Datejoined:'10/05/2022'},
-  {name: 'ovais', RegistrationEmail: 'musaib@gmail.com', status: 'DISABLE', lastlogin: '10/05/2022',Datejoined:'10/05/2022'},
-  {name: 'umer', RegistrationEmail: 'musaib@gmail.com', status: 'DISABLE', lastlogin: '10/05/2022',Datejoined:'10/05/2022'},
-  {name: 'akib', RegistrationEmail: 'musaib@gmail.com', status: 'DISABLE', lastlogin: '10/05/2022',Datejoined:'10/05/2022'},
-  {name: 'sajad', RegistrationEmail: 'musaib@gmail.com', status: 'DISABLE', lastlogin: '10/05/2022',Datejoined:'10/05/2022'},
-  {name: 'gowher', RegistrationEmail: 'musaib@gmail.com', status: 'DISABLE', lastlogin: '10/05/2022',Datejoined:'10/05/2022'},
-  {name: 'sahil', RegistrationEmail: 'musaib@gmail.com', status: 'Disable', lastlogin: '10/05/2022',Datejoined:'10/05/2022'},
-  {name: 'fazil', RegistrationEmail: 'musaib@gmail.com', status: 'Disable', lastlogin: '10/05/2022',Datejoined:'10/05/2022'},
-  {name: 'amir', RegistrationEmail: 'musaib@gmail.com', status: 'Disable', lastlogin: '10/05/2022',Datejoined:'10/05/2022'},
-  {name: 'Musaib', RegistrationEmail: 'musaib@gmail.com', status: 'Disable', lastlogin: '10/05/2022',Datejoined:'10/05/2022'},
-  {name: 'Musaib', RegistrationEmail: 'musaib@gmail.com', status: 'Disable', lastlogin: '10/05/2022',Datejoined:'10/05/2022'},
-  {name: 'Musaib', RegistrationEmail: 'musaib@gmail.com', status: 'Disable', lastlogin: '10/05/2022',Datejoined:'10/05/2022'},
-  {name: 'Musaib', RegistrationEmail: 'musaib@gmail.com', status: 'Disable', lastlogin: '10/05/2022',Datejoined:'10/05/2022'},
-  {name: 'Musaib', RegistrationEmail: 'musaib@gmail.com', status: 'Disable', lastlogin: '10/05/2022',Datejoined:'10/05/2022'},
-  {name: 'Musaib', RegistrationEmail: 'musaib@gmail.com', status: 'Disable', lastlogin: '10/05/2022',Datejoined:'10/05/2022'},
-  {name: 'Musaib', RegistrationEmail: 'musaib@gmail.com', status: 'Disable', lastlogin: '10/05/2022',Datejoined:'10/05/2022'},
-  {name: 'Musaib', RegistrationEmail: 'musaib@gmail.com', status: 'Disable', lastlogin: '10/05/2022',Datejoined:'10/05/2022'},
-  {name: 'Musaib', RegistrationEmail: 'musaib@gmail.com', status: 'Disable', lastlogin: '10/05/2022',Datejoined:'10/05/2022'},
-  {name: 'Musaib', RegistrationEmail: 'musaib@gmail.com', status: 'DISABLE', lastlogin: '10/05/2022',Datejoined:'10/05/2022'},
-  
-  
-];
+//const TABLE_DATA: tableElement[] = 
 
 @Component({
   selector: 'app-users',
@@ -45,17 +29,35 @@ const TABLE_DATA: tableElement[] = [
   styleUrls: ['./users.component.scss']
 })
 export class UsersComponent implements OnInit,AfterViewInit {
+  public errorMessage:string |undefined=undefined;
 
-  constructor() { }
+  userModelobj :userData=new userData
+  router: any;
+
+  constructor(private api:UserService) {
+this.userModelobj.userId = 70,
+this.userModelobj.limit = 10,
+this.userModelobj.page=0,
+this.userModelobj.orderBy= '-createdAt'
+
+    this.api.getUser(this.userModelobj).subscribe(res => {
+      console.log(res)
+      //this.usrData.data = res;
+    })
+    
+   }
+   
   ngAfterViewInit(): void {
     this.dataSource.paginator = this.paginator;
   }
 
   ngOnInit(): void {
+    
   }
+  displayStyle = "none";
   
-  displayedColumns: string[] = ['select', 'name', 'RegistrationEmail', 'status', 'lastlogin','Datejoined','actions'];
-  dataSource = new MatTableDataSource<tableElement>(TABLE_DATA);
+  displayedColumns: string[] = ['name', 'registrationEmail', 'status', 'lastlogin','datejoined'];
+  dataSource = new MatTableDataSource<tableElement>();
   selection = new SelectionModel<tableElement>(true, []);
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -90,6 +92,17 @@ export class UsersComponent implements OnInit,AfterViewInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
 }
 
+/**ts for modal open/close */
+openPopup() {
+  this.displayStyle = "block";
+}
+closePopup() {
+  this.displayStyle = "none";
+}
+
+
+
 
 
 }
+

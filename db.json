@@ -1,0 +1,51 @@
+{
+    "posts": [
+      { "id": 1, "title": "json-server", "author": "typicode" }
+      
+    ],
+    "login": [
+      { "email": "musaib@gmail.com", "password": "admin121" }
+    ],
+    "userList":[ 
+        {"name": "Musaib", "RegistrationEmail": "musaib@gmail.com", "status": "DISABLE", "lastlogin": "10/05/2022","Datejoined":"10/05/2022"},
+        {"name": "Musaib", "RegistrationEmail": "musaib@gmail.com", "status": "DISABLE", "lastlogin": "10/05/2022","Datejoined":"10/05/2022"},
+        {"name": "Musaib", "RegistrationEmail": "musaib@gmail.com", "status": "DISABLE", "lastlogin": "10/05/2022","Datejoined":"10/05/2022"},
+        {"name": "Musaib", "RegistrationEmail": "musaib@gmail.com", "status": "DISABLE", "lastlogin": "10/05/2022","Datejoined":"10/05/2022"},
+        {"name": "Musaib", "RegistrationEmail": "musaib@gmail.com", "status": "DISABLE", "lastlogin": "10/05/2022","Datejoined":"10/05/2022"},
+        {"name": "Musaib", "RegistrationEmail": "musaib@gmail.com", "status": "DISABLE", "lastlogin": "10/05/2022","Datejoined":"10/05/2022"},
+        {"name": "Musaib", "RegistrationEmail": "musaib@gmail.com", "status": "DISABLE", "lastlogin": "10/05/2022","Datejoined":"10/05/2022"},
+        {"name": "Musaib", "RegistrationEmail": "musaib@gmail.com", "status": "DISABLE", "lastlogin": "10/05/2022","Datejoined":"10/05/2022"},
+        {"name": "Musaib", "RegistrationEmail": "musaib@gmail.com", "status": "DISABLE", "lastlogin": "10/05/2022","Datejoined":"10/05/2022"},
+        {"name": "Musaib", "RegistrationEmail": "musaib@gmail.com", "status": "DISABLE", "lastlogin": "10/05/2022","Datejoined":"10/05/2022"},
+        {"name": "Musaib", "RegistrationEmail": "musaib@gmail.com", "status": "DISABLE", "lastlogin": "10/05/2022","Datejoined":"10/05/2022"},
+        {"name": "Musaib", "RegistrationEmail": "musaib@gmail.com", "status": "DISABLE", "lastlogin": "10/05/2022","Datejoined":"10/05/2022"},
+        {"name": "Musaib", "RegistrationEmail": "musaib@gmail.com", "status": "DISABLE", "lastlogin": "10/05/2022","Datejoined":"10/05/2022"},
+        {"name": "Musaib", "RegistrationEmail": "musaib@gmail.com", "status": "DISABLE", "lastlogin": "10/05/2022","Datejoined":"10/05/2022"},
+        {"name": "Musaib", "RegistrationEmail": "musaib@gmail.com", "status": "DISABLE", "lastlogin": "10/05/2022","Datejoined":"10/05/2022"}
+
+
+
+    ],
+    "userStats":[
+        {"emailAddress":"Musaib@gmail.com", "googleAccounts":"2", "contacts":"2", "campaigns":"20", "messages":"100" },
+        {"emailAddress":"Musaib@gmail.com", "googleAccounts":"2", "contacts":"2", "campaigns":"20", "messages":"100" },
+        {"emailAddress":"Musaib@gmail.com", "googleAccounts":"2", "contacts":"2", "campaigns":"20", "messages":"100" },
+        {"emailAddress":"Musaib@gmail.com", "googleAccounts":"2", "contacts":"2", "campaigns":"20", "messages":"100" },
+        {"emailAddress":"Musaib@gmail.com", "googleAccounts":"2", "contacts":"2", "campaigns":"20", "messages":"100" },
+        {"emailAddress":"Musaib@gmail.com", "googleAccounts":"2", "contacts":"2", "campaigns":"20", "messages":"100" },
+        {"emailAddress":"Musaib@gmail.com", "googleAccounts":"2", "contacts":"2", "campaigns":"20", "messages":"100" },
+        {"emailAddress":"Musaib@gmail.com", "googleAccounts":"2", "contacts":"2", "campaigns":"20", "messages":"100" },
+        {"emailAddress":"Musaib@gmail.com", "googleAccounts":"2", "contacts":"2", "campaigns":"20", "messages":"100" },
+        {"emailAddress":"Musaib@gmail.com", "googleAccounts":"2", "contacts":"2", "campaigns":"20", "messages":"100" },
+        {"emailAddress":"Musaib@gmail.com", "googleAccounts":"2", "contacts":"2", "campaigns":"20", "messages":"100" },
+        {"emailAddress":"Musaib@gmail.com", "googleAccounts":"2", "contacts":"2", "campaigns":"20", "messages":"100" },
+        {"emailAddress":"Musaib@gmail.com", "googleAccounts":"2", "contacts":"2", "campaigns":"20", "messages":"100" }
+    ],
+        "profile": { "name": "typicode" }
+       
+    
+
+    
+  }
+
+  
