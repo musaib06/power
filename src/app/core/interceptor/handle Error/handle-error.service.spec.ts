@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { AlertfyService } from './alertfy.service';
+import { HandleErrorService } from './handle-error.service';
 
-describe('AlertfyService', () => {
-  let service: AlertfyService;
+describe('HandleErrorService', () => {
+  let service: HandleErrorService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(AlertfyService);
+    service = TestBed.inject(HandleErrorService);
   });
 
   it('should be created', () => {

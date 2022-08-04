@@ -6,6 +6,7 @@ import { loginData } from './login.model';
 import { AuthServicesService } from 'src/app/core/services/authServices/auth-services.service';
 
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -16,6 +17,7 @@ export class LoginComponent implements OnInit {
   loginmodelobj :loginData=new loginData
   //alertMsg :boolean=false
   public errorMessage:string |undefined=undefined;
+  public successMsg:string |undefined=undefined;
  
   
   constructor(private  formBuilder:FormBuilder,private _http:HttpClient,private router:Router,
@@ -43,26 +45,28 @@ export class LoginComponent implements OnInit {
         console.log(this.token)
         localStorage.setItem('token',this.token)
          this.router.navigate(['./admin'])
+         
+
            return null;  
       }
       ,
-      error:(error)=>{
-        // this.alertMsg=true
-        console.log(error);
-        this.errorMessage=error;
-        this.router.navigate(['./auth'])
-        
-      }
+      error:(err)=>{
+        //  this.errorMessage=true
+        console.log(err);
+        this.errorMessage=err;
+         
+      },
+      
     })
   
-    
+   
   
      
   
   }
+ 
+  
 
-  getlog(){
-   
-  }
+  
  
 }

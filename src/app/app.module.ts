@@ -11,6 +11,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AuthGuard } from './core/authGuard/auth.guard';
 import { TokenInterceptorService } from './core/interceptor/token-interceptor.service';
+import { ToastrModule } from 'ngx-toastr';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +23,11 @@ import { TokenInterceptorService } from './core/interceptor/token-interceptor.se
     BrowserAnimationsModule,
     RouterModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    ToastrModule.forRoot({
+      timeOut: 5000,
+      positionClass: "toast-bottom-left",
+    }),
   ],
   providers: [AuthGuard,{
     provide:HTTP_INTERCEPTORS,

@@ -1,5 +1,20 @@
 <div class="wrapper ">
 
+
+ <!-- toast alert messagae -->
+ <!-- <div aria-live="polite" aria-atomic="true" style="position: relative; min-height: 40px;" *ngIf="errorMessage">
+    <div >
+     
+      <div class="toast-body" style="position: absolute; top: 0; right: 0; background-color: rgb(221, 61, 61);">
+       <p class="h5 "> {{errorMessage}}</p>
+      </div>
+    </div>
+  </div> -->
+
+  
+
+<!-- end of toast alert message -->
+
     <div class="preloader flex-column justify-content-center align-items-center">
         <img class="animation__wobble" src="assets/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
     </div>
@@ -10,17 +25,17 @@
             <li class="nav-item">
                 <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
             </li>
-            <li class="nav-item d-none d-sm-inline-block">
-                <a href="index3.html" class="nav-link">Home</a>
+            <!-- <li class="nav-item d-none d-sm-inline-block">
+                <a href="" class="nav-link">Home</a>
             </li>
             <li class="nav-item d-none d-sm-inline-block">
                 <a href="#" class="nav-link">Contact</a>
-            </li>
+            </li> -->
         </ul>
 
-        <ul class="navbar-nav ml-auto">
+        <ul class="navbar-nav ml-auto ">
 
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <a class="nav-link" data-widget="navbar-search" href="#" role="button">
                     <i class="fas fa-search"></i>
                 </a>
@@ -40,9 +55,9 @@
                         </div>
                     </form>
                 </div>
-            </li>
+            </li> -->
 
-            <li class="nav-item dropdown">
+            <!-- <li class="nav-item dropdown">
                 <a class="nav-link" data-toggle="dropdown" href="#">
                     <i class="far fa-comments"></i>
                     <span class="badge badge-danger navbar-badge">3</span>
@@ -101,9 +116,9 @@
                     <div class="dropdown-divider"></div>
                     <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
                 </div>
-            </li>
+            </li> -->
 
-            <li class="nav-item dropdown">
+            <!-- <li class="nav-item dropdown">
                 <a class="nav-link" data-toggle="dropdown" href="#">
                     <i class="far fa-bell"></i>
                     <span class="badge badge-warning navbar-badge">15</span>
@@ -138,7 +153,7 @@
                 <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
                     <i class="fas fa-th-large"></i>
                 </a>
-            </li>
+            </li> -->
             <li>
                 <button type="button" class="btn btn-primary" (click)="logOut()">LogOut</button>
             </li>
@@ -156,14 +171,14 @@
 
         <div class="sidebar">
 
-            <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+            <!-- <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                 <div class="image">
                     <img src="assets/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
                 </div>
                 <div class="info">
                     <a href="#" class="d-block">Aamir</a>
                 </div>
-            </div>
+            </div> 
 
             <div class="form-inline">
                 <div class="input-group" data-widget="sidebar-search">
@@ -175,7 +190,7 @@
                         </button>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
             <nav class="mt-2">
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
@@ -189,7 +204,7 @@
                                     <p>Dashboard</p>
                                 </a>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item ">
                                 <a mat-list-item routerLink="users" class="nav-link" routerLinkActive="active">
 
                                     <p>Users List</p>
@@ -204,7 +219,7 @@
                         </ul>
                     </li>
 
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a href="#" class="nav-link">
                             <i class="nav-icon far fa-envelope"></i>
                             <p>
@@ -232,9 +247,9 @@
                                 </a>
                             </li>
                         </ul>
-                    </li>
+                    </li>-->
 
-                </ul>
+                </ul> 
             </nav>
 
         </div>
@@ -248,14 +263,14 @@
 
     </aside>
 
-    <div class="content-wrapper">
+    <div class="content-wrapper mt-0">
         <router-outlet></router-outlet>
     </div>
-    <footer class="main-footer">
+    <!-- <footer class="main-footer">
         <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
         All rights reserved.
         <div class="float-right d-none d-sm-inline-block">
             <b>Version</b> 3.2.0
         </div>
-    </footer>
+    </footer> -->
 </div>

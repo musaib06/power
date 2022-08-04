@@ -1,4 +1,37 @@
 <div class="bg-secondaryy" style="border: px solid transparent; background: white;">
+    <!-- error message -->
+    <!-- <section >
+        <div class="container" aria-live="polite" aria-atomic="true" style="position: relative; min-height: 200px;" *ngIf="errorMessage">
+            <div class="row toast-header">
+                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                <div class="col toast-body">
+                    <p class="h4 text-danger">{{errorMessage}}</p>
+                </div>
+            </div>
+        </div>
+    </section> -->
+   <!-- toast alert messagae -->
+   
+   <div  aria-live="assertive" aria-atomic="true" style="position: relative; min-height: 40px;" *ngIf="errorMessage">
+    <div >
+     
+        <div class="alert alert-warning" style="position: absolute; top: 0; right: 0;background-color: #ffc10742;margin-right: 1%;"role="alert">
+           {{errorMessage}}
+          </div>
+      
+    </div>
+  </div>
+
+  
+
+<!-- end of toast alert message -->
+
+<!-- new toast -->
+
+ 
+<!-- End toast -->
     <section class="vh-110" style="height: 110vh;">
         <div class="container h-100">
 
@@ -55,13 +88,4 @@
         </div>
 
     </section>
-</div>
-<section >
-    <div class="container" *ngIf="errorMessage">
-        <div class="row">
-            <div class="col">
-                <p class="h4 text-danger">{{errorMessage}}</p>
-            </div>
-        </div>
-    </div>
-</section>
+

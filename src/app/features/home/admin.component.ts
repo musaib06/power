@@ -4,6 +4,8 @@ import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { Router } from '@angular/router';
 
+
+  
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
@@ -15,21 +17,31 @@ export class AdminComponent implements OnInit {
       map(result => result.matches),
       shareReplay()
     );
+    
+  
+    
+  public errorMessage:string |undefined=undefined;
 
   constructor(private breakpointObserver: BreakpointObserver,private router:Router) { }
   
 
   ngOnInit(): void {
-
-    
   }
+  
+  
   logOut()
   {
     localStorage.clear();
     this.router.navigateByUrl('/auth')
+   
   }
+  
     //test(){
   //this.router.navigateByUrl('/admin/users');
   //console.log('working');
   
+  
 }
+
+   
+

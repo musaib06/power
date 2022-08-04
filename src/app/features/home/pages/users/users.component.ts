@@ -7,6 +7,7 @@ import { HttpClient } from '@angular/common/http';
 import { UserService } from 'src/app/core/services/user-Services/user.service';
 import { userData } from './user.model';
 import { NgbPaginationNumber } from '@ng-bootstrap/ng-bootstrap';
+import { Router } from '@angular/router';
 
 
 
@@ -32,18 +33,37 @@ export class UsersComponent implements OnInit,AfterViewInit {
   public errorMessage:string |undefined=undefined;
 
   userModelobj :userData=new userData
-  router: any;
+  userData: any;
 
-  constructor(private api:UserService) {
+  constructor(private api:UserService, private router: Router) {
 this.userModelobj.userId = 70,
 this.userModelobj.limit = 10,
 this.userModelobj.page=0,
 this.userModelobj.orderBy= '-createdAt'
 
-    this.api.getUser(this.userModelobj).subscribe(res => {
-      console.log(res)
-      //this.usrData.data = res;
+    this.api.getUser(this.userModelobj).subscribe({
+      next:(res:any)=>{
+        this.dataSource.data = res.content;
+      },
+      error:(error)=>{
+        this.errorMessage=error;
+          if(error == 'Access! Denied.'){
+            this.router.navigate(['auth'])
+          }
+      }
     })
+    // (res => {
+    //   console.log(res)
+    //   this.dataSource.data = res.content;
+    // },
+    // error=>{
+    //   this.errorMessage=error;
+    //   if(error == 'Access! Denied.'){
+    //     this.router.navigate(['auth'])
+    //   }
+      
+      
+    // })
     
    }
    
@@ -56,7 +76,7 @@ this.userModelobj.orderBy= '-createdAt'
   }
   displayStyle = "none";
   
-  displayedColumns: string[] = ['name', 'registrationEmail', 'status', 'lastlogin','datejoined'];
+  displayedColumns: string[] = ['select','name', 'registrationEmail', 'status', 'lastlogin','datejoined','actions'];
   dataSource = new MatTableDataSource<tableElement>();
   selection = new SelectionModel<tableElement>(true, []);
 
